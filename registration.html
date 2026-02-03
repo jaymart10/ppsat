@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Registration - PPSAT</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        input[type="date"], input[type="text"], input[type="email"], input[type="number"], input[type="file"], select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 8px;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(5px);
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+            font-size: 0.95rem;
+            color: #000;
+        }
+
+        .form-section-title {
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: #003366;
+            margin: 15px 0 10px 5px;
+            text-transform: uppercase;
+            text-align: left;
+        }
+
+        /* Added specific label styling for input fields */
+        .input-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #333;
+            display: block;
+            margin-bottom: 5px;
+            text-align: left;
+            text-transform: uppercase;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .upload-zone {
+            border: 2px dashed rgba(0,0,0,0.2);
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        @media (max-width: 600px) {
+            .about-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-section">
+        <div class="overlay"></div>
+        <div class="content" id="main-content" style="max-width: 800px;">
+            <header>
+                <h1>EF-01 REGISTRATION</h1>
+                <p class="subtitle">Official Puerto Princesa School of Arts and Trades Form</p>
+            </header>
+
+            <form class="registration-form" id="regForm">
+                <div class="form-section-title">Personal Information</div>
+                <div class="about-card">
+                    <input type="text" id="studentName" placeholder="Full Name (Last Name, First Name, M.I.)" required>
+                </div>
+                
+                <div class="about-grid">
+                    <div class="about-card">
+                        <label for="dob" class="input-label">Date of Birth</label>
+                        <input type="date" id="dob" required>
+                    </div>
+
+                    <div class="about-card">
+                        <label for="sex" class="input-label">Sex</label>
+                        <select id="sex" required>
+                            <option value="" disabled selected>-- Select --</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </div>
+                    
+                    <div class="about-card">
+                        <label for="civilStatus" class="input-label">Civil Status</label>
+                        <select id="civilStatus" required>
+                            <option value="" disabled selected>-- Select --</option>
+                            <option value="Single">Single</option>
+                            <option value="Married">Married</option>
+                            <option value="Widowed">Widowed</option>
+                        </select>
+                    </div>
+
+                    <div class="about-card">
+                        <label for="contactNo" class="input-label">Contact Number</label>
+                        <input type="text" id="contactNo" placeholder="09XXXXXXXXX" required>
+                    </div>
+                </div>
+
+                <div class="about-card">
+                    <input type="text" id="homeAddress" placeholder="Home Address (Street, Brgy, City/Municipality)" required>
+                </div>
+
+                <div class="form-section-title">Guardian / Parent Information</div>
+                <div class="about-card">
+                    <input type="text" id="guardianName" placeholder="Guardian/Parent Full Name" required>
+                </div>
+                <div class="about-grid">
+                    <div class="about-card"><input type="text" id="guardianOcc" placeholder="Occupation"></div>
+                    <div class="about-card"><input type="text" id="guardianContact" placeholder="Guardian Contact #"></div>
+                </div>
+
+                <div class="form-section-title">Academic & Program Selection</div>
+                <div class="about-card">
+                    <input type="text" id="lastSchool" placeholder="School Last Attended" required>
+                </div>
+                <div class="about-card">
+                    <select id="courseSelect" required>
+                        <option value="" disabled selected>-- Select Desired Program --</option>
+                        
+                        <optgroup label="Diploma Programs (3 Year)">
+                            <option value="Diploma in Hotel and Restaurant Technology">Diploma in Hotel and Restaurant Technology</option>
+                            <option value="Diploma in Electrical Technology">Diploma in Electrical Technology</option>
+                            <option value="Diploma in Civil Technology">Diploma in Civil Technology</option>
+                        </optgroup>
+
+                        <optgroup label="Agriculture">
+                            <option value="Agricultural Crops Production NC II">Agricultural Crops Production NC II</option>
+                            <option value="Organic Agriculture Production NC II">Organic Agriculture Production NC II</option>
+                        </optgroup>
+
+                        <optgroup label="Automotive & Land Transportation">
+                            <option value="Driving NC II">Driving NC II</option>
+                        </optgroup>
+
+                        <optgroup label="Construction">
+                            <option value="Carpentry NC II">Carpentry NC II</option>
+                            <option value="Masonry NC I">Masonry NC I</option>
+                            <option value="Masonry NC II">Masonry NC II</option>
+                            <option value="Plumbing NC I">Plumbing NC I</option>
+                            <option value="Plumbing NC II">Plumbing NC II</option>
+                            <option value="PV System Installation NC II">PV System Installation NC II</option>
+                            <option value="PV System Servicing NC III">PV System Servicing NC III</option>
+                        </optgroup>
+
+                        <optgroup label="Electrical & Electronics">
+                            <option value="Computer Systems Servicing NC II">Computer Systems Servicing NC II</option>
+                            <option value="Electrical Installation & Maintenance NC II">Electrical Installation & Maintenance NC II</option>
+                            <option value="Electrical Installation & Maintenance NC III">Electrical Installation & Maintenance NC III</option>
+                            <option value="Electronic Production & Assembly Services NC II">Electronic Production & Assembly Services NC II</option>
+                        </optgroup>
+
+                        <optgroup label="Garments">
+                            <option value="Dressmaking NC II">Dressmaking NC II</option>
+                        </optgroup>
+
+                        <optgroup label="Metals & Engineering">
+                            <option value="Shielded Metal Arc Welding NC I">Shielded Metal Arc Welding NC I</option>
+                            <option value="Shielded Metal Arc Welding NC II">Shielded Metal Arc Welding NC II</option>
+                        </optgroup>
+
+                        <optgroup label="Processed Food & Beverage">
+                            <option value="Food Processing NC I">Food Processing NC I</option>
+                            <option value="Food Processing NC II">Food Processing NC II</option>
+                        </optgroup>
+
+                        <optgroup label="Social & Community Development">
+                            <option value="Bookkeeping NC III">Bookkeeping NC III</option>
+                        </optgroup>
+
+                        <optgroup label="Tourism (Hotel & Restaurant)">
+                            <option value="Bread & Pastry Production NC II">Bread & Pastry Production NC II</option>
+                            <option value="Food & Beverage Services NC II">Food & Beverage Services NC II</option>
+                            <option value="Food & Beverage Services NC III">Food & Beverage Services NC III</option>
+                            <option value="Front Office Services NC II">Front Office Services NC II</option>
+                            <option value="Housekeeping NC II">Housekeeping NC II</option>
+                        </optgroup>
+
+                        <optgroup label="TVET & Training">
+                            <option value="Community-Based Trainers Methodology">Community-Based Trainers Methodology</option>
+                            <option value="Trainers Methodology Level I">Trainers Methodology Level I</option>
+                            <option value="Trainers Methodology Level II">Trainers Methodology Level II</option>
+                        </optgroup>
+
+                        <optgroup label="Language Programs">
+                            <option value="Basic Arabic Language and Saudi/Gulf Culture">Basic Arabic Language</option>
+                            <option value="English Proficiency A1 and A2 Level">English Proficiency A1 and A2 Level</option>
+                            <option value="Chinese Language and Culture A1 Level">Chinese Language and Culture A1 Level</option>
+                            <option value="Korean Language and Culture A1">Korean Language and Culture A1</option>
+                            <option value="Japanese Language and Culture A1 Level">Japanese Language and Culture A1 Level</option>
+                            <option value="Spanish Language and Culture A1 Level">Spanish Language and Culture A1 Level</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+                <div class="about-card upload-zone">
+                    <h3 style="font-size: 0.9rem; margin: 0;">📁 Upload Digital Requirements</h3>
+                    <p style="font-size: 0.7rem; margin-bottom: 10px; opacity: 0.7;">PSA Birth Cert / Form 138 (PDF/JPG)</p>
+                    <input type="file" id="file-input" multiple required>
+                </div>
+
+                <div id="loading-container" style="display: none; width: 100%; margin: 20px 0;">
+                    <p id="status-text" class="loading-text" style="font-weight: 600; color: #003366;">Verifying Submission...</p>
+                    <div style="width: 100%; background: rgba(0,0,0,0.1); height: 8px; border-radius: 4px; overflow: hidden; margin-top: 10px;">
+                        <div id="progress-bar" style="width: 0%; background: #003366; height: 100%; transition: width 0.4s ease-out;"></div>
+                    </div>
+                </div>
+
+                <div class="action-area" id="form-buttons">
+                    <button type="submit" class="btn enroll-btn">SUBMIT EF-01 FORM</button>
+                    <a href="index.html" class="btn">CANCEL</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const regForm = document.getElementById('regForm');
+        const contentBox = document.getElementById('main-content');
+
+        regForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('studentName').value,
+                course: document.getElementById('courseSelect').value,
+                contact: document.getElementById('contactNo').value
+            };
+
+            document.getElementById('form-buttons').style.display = 'none';
+            document.getElementById('loading-container').style.display = 'block';
+
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += 20;
+                document.getElementById('progress-bar').style.width = progress + '%';
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    setTimeout(() => showSuccess(formData), 500);
+                }
+            }, 300);
+        });
+
+        function showSuccess(data) {
+            contentBox.innerHTML = `
+                <div style="text-align: center; animation: fadeInUp 0.6s ease-out;">
+                    <div style="font-size: 5rem;">✅</div>
+                    <h1>REGISTRATION FILED</h1>
+                    <p class="subtitle">EF-01 Application Received</p>
+                    <div class="about-card" style="text-align: left; background: #fff; margin-top: 20px; padding: 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                        <p><strong>Applicant:</strong> ${data.name}</p>
+                        <p><strong>Program:</strong> ${data.course}</p>
+                        <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
+                        <p style="font-size: 0.85rem; color: #444; line-height: 1.4;">
+                            <strong>Next Steps:</strong> Please proceed to the PPSAT Campus at Rafols Road, Sta. Monica, PPC with your original documents for the Aptitude Test and Medical Assessment.
+                        </p>
+                    </div>
+                    <div class="action-area">
+                        <button onclick="window.print()" class="btn">PRINT SUMMARY</button>
+                        <a href="index.html" class="btn enroll-btn">RETURN HOME</a>
+                    </div>
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>

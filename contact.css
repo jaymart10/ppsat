@@ -1,0 +1,45 @@
+/* --- Interactive Map Styling --- */
+.map-container {
+    padding: 10px !important; 
+    margin-top: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px; /* Smoothed corners */
+    overflow: hidden;
+    
+    /* Initial state for animation */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.map-container iframe {
+    filter: grayscale(10%) contrast(90%);
+    transition: filter 0.4s ease, transform 0.4s ease;
+    border-radius: 8px;
+    display: block;
+}
+
+/* Hover Effects */
+.map-container:hover {
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.map-container:hover iframe {
+    filter: grayscale(0%) contrast(100%);
+    transform: scale(1.01); /* Subtle zoom effect */
+}
+
+/* Keyframe for the entrance */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Staggered animation delay for the map */
+.contact-details-box .about-card:nth-child(3) { 
+    animation-delay: 0.9s; 
+}

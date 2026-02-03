@@ -1,0 +1,66 @@
+/* --- Two Column Course Layout --- */
+.courses-container {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr; /* Slightly wider for short courses */
+    gap: 30px;
+    text-align: left;
+    margin-top: 20px;
+}
+
+.column-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    border-left: 5px solid #000;
+    padding-left: 15px;
+}
+
+.course-column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.course-list {
+    list-style: none;
+    padding: 0;
+}
+
+.course-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #111;
+}
+
+.course-list li:last-child {
+    border-bottom: none;
+}
+
+/* Scrollbox for long lists to keep columns even height */
+.scroll-box {
+    max-height: 450px;
+    overflow-y: auto;
+    padding-right: 15px;
+}
+
+/* Custom Scrollbar for Glass Theme */
+.scroll-box::-webkit-scrollbar {
+    width: 6px;
+}
+.scroll-box::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+/* Mobile Responsive: Stack columns on small screens */
+@media (max-width: 850px) {
+    .courses-container {
+        grid-template-columns: 1fr;
+    }
+    .scroll-box {
+        max-height: none; /* Let it expand on mobile */
+    }
+}

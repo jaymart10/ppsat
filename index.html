@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PPSAT - Online Enrollment</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="preloader">
+        <div class="loader-content">
+            <img src="tesda-logo.webp" alt="PPSAT Logo" class="pulse-logo">
+            <h2>PPSAT</h2>
+            <p>Loading Excellence...</p>
+        </div>
+    </div>
+
+    <div class="hero-section">
+        <div class="overlay"></div>
+        <div class="content">
+            <header>
+                <h1>PUERTO PRINCESA SCHOOL OF ARTS AND TRADES</h1>
+                <h2 class="subtitle">ONLINE ENROLLMENT</h2>
+            </header>
+            <nav class="action-area">
+                <a href="enrollment.html" class="btn enroll-btn">ENROLL NOW!</a>
+                <a href="about.html" class="btn">ABOUT US</a>
+                <a href="courses.html" class="btn">COURSES</a>
+                <a href="contact.html" class="btn">CONTACT US</a>
+            </nav>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener("load", function() {
+            const loader = document.getElementById("preloader");
+            setTimeout(() => { loader.classList.add("loader-hidden"); }, 800); 
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const buttons = document.querySelectorAll('.btn');
+            const glassCard = document.querySelector('.content');
+            buttons.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    const target = this.getAttribute('href');
+                    if (target && target.includes('.html')) {
+                        e.preventDefault();
+                        glassCard.classList.add('exit');
+                        setTimeout(() => { window.location.href = target; }, 500);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyBsI0i93kSMk-c9IejB6I-PO3tsJr5gxd8",
+    authDomain: "enrollment-9b82b.firebaseapp.com",
+    projectId: "enrollment-9b82b",
+    storageBucket: "enrollment-9b82b.firebasestorage.app",
+    messagingSenderId: "862548834716",
+    appId: "1:862548834716:web:e949de21ab84c72109b059",
+    measurementId: "G-3YX8Q0DB15"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+</html>
