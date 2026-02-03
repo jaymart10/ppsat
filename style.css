@@ -172,3 +172,27 @@ h1 {
     h1 { font-size: 1.8rem; }
     .btn { width: 90%; }
 }
+/* Styles for Mobile Phones (Portrait) */
+@media screen and (max-width: 600px) {
+    .hero-section h1 {
+        font-size: 1.5rem; /* Shrinks the large PPSAT title */
+    }
+
+    .action-area {
+        flex-direction: column; /* Stacks buttons vertically instead of side-by-side */
+        gap: 15px;
+    }
+
+    .btn {
+        width: 100%; /* Makes buttons full-width for easier tapping */
+        padding: 15px;
+    }
+}
+
+/* Styles for Landscape Orientation */
+@media screen and (orientation: landscape) and (max-height: 500px) {
+    .hero-section {
+        height: auto; /* Prevents content from being cut off on short, wide screens */
+        padding: 40px 0;
+    }
+}
